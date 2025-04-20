@@ -1,0 +1,169 @@
+.lastHeader{
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    border-radius: calc(var(--index)*1);
+    position: relative;
+    z-index: 1;
+}
+
+.lastHeader__form{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--index)*1.5);
+    padding: calc(var(--index)*2) calc(var(--index)*3);
+}
+
+.lastHeader__form h1{
+    color: var(--any-text-color);
+    font-size: calc(var(--index)*2.52);
+}
+
+.lastHeader__form .lastHeader__form-wrapper{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--index)*1);
+}
+
+.lastHeader__form-wrapper input[type='text']{
+    width: 100%;
+    padding: calc(var(--index)*0.6) calc(var(--index)*1);
+    font-size: calc(var(--index)*0.9);
+    color: var(--bg-color);
+    font-family: var(--other-font);
+    outline: none;
+    border: calc(var(--index)*0.1) solid var(--other-util-color);
+    border-radius: calc(var(--index)*0.25);
+}
+
+.lastHeader__form-wrapper .input__wrapper{
+    display: flex;
+    gap: calc(var(--index)*0.5);
+    align-items: center;
+}
+
+.input__wrapper label[for='check']{
+    color: var(--bg-color);
+    font-family: var(--other-font);
+    font-size: calc(var(--index)*0.8);
+}
+
+.input__wrapper input[type='checkbox']{
+    accent-color: var(--bg-color);
+    width: calc(var(--index)*0.95);
+    height: calc(var(--index)*0.95);
+    cursor: pointer;
+}
+
+.lastHeader__form-wrapper .lastHeader__button{
+    width: 100%;
+    background-color: var(--util-color);
+    padding: calc(var(--index)*0.7) 0;
+    font-size: calc(var(--index)*0.9);
+    font-family: var(--other-font);
+    font-weight: 500;
+    border-radius: calc(var(--index)*0.25);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.lastHeader__form-wrapper .lastHeader__button:active{
+    transform: scale(0.95);
+}
+
+.lastHeader__img-wrapper{
+    width: 50%;
+    height: calc(var(--index)*24);
+    position: relative;
+    z-index: 2;
+}
+.lastHeader__img{
+    width: 100%;
+    height: 100%;
+    background: url(/assets/town-bg.png) right/cover;
+}
+
+.lastHeader__img-child {
+    width: 70%;
+    height: calc(var(--index)*28);
+    background: url(/assets/human-bg.png) no-repeat center/cover;
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    animation: anim 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes anim{
+    0%{
+        left: 0;
+    }
+
+    50%{
+        left: 6%;
+    }
+}
+
+@media (max-width: 816px) {
+    .lastHeader__img-wrapper{
+        height: calc(var(--index)*27);
+    }
+
+    .lastHeader__img-child {
+        width: 100%;
+        height: calc(var(--index)*32);
+        bottom: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .lastHeader__img-wrapper{
+        display: none;
+    }
+
+    .lastHeader__form{
+        width: 100%;
+    }
+
+    .lastHeader__form h1{
+        font-size: calc(var(--index)*3);
+        text-align: center;
+    }
+
+    .lastHeader__form-wrapper input[type='text']{
+        font-size: calc(var(--index)*1.5);
+    }
+
+    .lastHeader__form .lastHeader__form-wrapper{
+        gap: calc(var(--index)*1.8);   
+    }
+
+    .lastHeader__form-wrapper .input__wrapper{
+        gap: calc(var(--index)*1);
+    }
+    
+    .input__wrapper label[for='check']{
+        color: var(--bg-color);
+        font-family: var(--other-font);
+        font-size: calc(var(--index)*1.4);
+    }
+
+    .input__wrapper input[type='checkbox']{
+        width: calc(var(--index)*1.7);
+        height: calc(var(--index)*1.7);
+    }
+
+    .lastHeader__form-wrapper .lastHeader__button{
+        font-size: calc(var(--index)*1.7);
+    }
+}
